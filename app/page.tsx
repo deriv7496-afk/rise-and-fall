@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useSmartChartsApi } from '@/hooks/use-smartcharts-api';
 import { useSmartChartChartData } from '@/hooks/use-smartchart-chart-data';
 import { useRiseFallTrading } from '../hooks/use-rise-fall-trading';
@@ -8,6 +9,35 @@ import { useLogoSrc } from '@/components/custom/logo-src-provider';
 import { RiseFallView } from '../components/rise-fall-view';
 
 export default function RiseFallPage() {
+  // Parse OAuth callback and store credentials
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    
+    // Collect all account credentials from URL params
+    const accounts = [];
+    let index = 1;
+    
+    while (params.has(`acct${index}`)) {
+      const account = {
+        id: params.get(`acct${index}`),
+        token: params.get(`token${index}`),
+        currency: params.get(`cur${index}`),
+      };
+      accounts.push(account);
+      index++;
+    }
+    
+    // Store accounts and set active token if any accounts exist
+    if (accounts.length > 0) {
+      localStorage.setItem('deriv_accounts', JSON.stringify(accounts));
+      localStorage.setItem('active_deriv_token', accounts[0].token || '');
+      
+      // Clear URL bar to remove sensitive token data
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
   const logoSrc = useLogoSrc();
   const { ws, isConnected, isExhausted, auth } = useDerivWSContext();
   const { authState, accounts, activeAccount, login, signUp, logout, switchAccount } = auth;
