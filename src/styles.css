@@ -1,0 +1,44 @@
+.signal-panel {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-tertiary);
+  border-radius: 12px; padding: 18px; min-width: 260px;
+}
+.signal-loading { opacity: 0.7; }
+.warmup-label { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px; }
+.warmup-track { height: 6px; background: var(--color-border-tertiary); border-radius: 3px; overflow: hidden; }
+.warmup-fill  { height: 100%; background: var(--color-text-info); border-radius: 3px; transition: width 0.3s; }
+.signal-main { font-size: 28px; font-weight: 500; text-align: center; letter-spacing: 2px; margin-bottom: 10px; }
+.signal-meta-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--color-text-secondary); margin-bottom: 8px; }
+.signal-type-badge { font-size: 11px; padding: 2px 8px; border: 1px solid var(--color-border-secondary); border-radius: 20px; color: var(--color-text-tertiary); }
+.conf-track { position: relative; height: 20px; background: var(--color-border-tertiary); border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.conf-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
+.conf-label { position: absolute; top: 0; left: 8px; line-height: 20px; font-size: 11px; color: #fff; z-index: 1; font-weight: 500; }
+.mlp-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.mlp-tag { font-size: 11px; color: var(--color-text-tertiary); min-width: 28px; }
+.mlp-track { position: relative; flex: 1; height: 10px; background: var(--color-border-tertiary); border-radius: 5px; overflow: hidden; }
+.mlp-center { position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: var(--color-border-secondary); z-index: 2; }
+.mlp-fill { position: absolute; top: 0; height: 100%; transition: width 0.3s, left 0.3s, right 0.3s; }
+.mlp-prob { font-size: 11px; color: var(--color-text-tertiary); text-align: center; margin-bottom: 10px; }
+.regime-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px; }
+.regime-label { color: var(--color-text-tertiary); }
+.regime-value { color: var(--color-text-secondary); font-weight: 500; }
+.no-trade-reason { font-size: 12px; color: var(--color-text-tertiary); text-align: center; padding: 8px 0; border-top: 1px solid var(--color-border-tertiary); }
+.components { margin-top: 10px; border-top: 1px solid var(--color-border-tertiary); padding-top: 10px; }
+.comp-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; font-size: 11px; }
+.comp-key { width: 72px; color: var(--color-text-tertiary); }
+.comp-bar-track { position: relative; flex: 1; height: 8px; background: var(--color-border-tertiary); border-radius: 4px; overflow: hidden; }
+.comp-bar-center { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: var(--color-border-secondary); }
+.comp-bar-fill { position: absolute; top: 0; height: 100%; transition: width 0.3s; }
+.comp-val { width: 36px; text-align: right; color: var(--color-text-secondary); }
+.auto-mode-wrap { display: flex; flex-direction: column; gap: 8px; }
+.stake-row { display: flex; align-items: center; gap: 10px; }
+.stake-label { font-size: 13px; color: var(--color-text-secondary); }
+.stake-input { width: 80px; padding: 4px 8px; font-size: 14px; border: 1px solid var(--color-border-secondary); border-radius: 6px; background: var(--color-background-primary); color: var(--color-text-primary); }
+.auto-btn { display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; letter-spacing: 1px; }
+.auto-btn-on  { background: var(--color-background-success); color: var(--color-text-success); border-color: var(--color-border-success); }
+.auto-btn-off { background: var(--color-background-secondary); color: var(--color-text-tertiary); border-color: var(--color-border-tertiary); }
+.auto-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-text-tertiary); transition: background 0.2s; }
+.auto-dot-on { background: var(--color-text-success); }
+.cooldown-bar { font-size: 12px; color: var(--color-text-tertiary); padding: 4px 10px; border: 1px solid var(--color-border-tertiary); border-radius: 6px; text-align: center; }
+.auto-warning { font-size: 12px; color: var(--color-text-warning); background: var(--color-background-warning); border-radius: 6px; padding: 6px 12px; text-align: center; }
+.stats-row { display: flex; gap: 16px; font-size: 12px; color: var(--color-text-secondary); flex-wrap: wrap; }
